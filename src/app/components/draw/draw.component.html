@@ -1,0 +1,14 @@
+<!-- PROPERTIES -->
+<div>
+  <button *ngFor="let color of colors; let i = index" (click)="selectColor(i)">
+    color {{ i }}
+  </button>
+</div>
+<div>colorIndex: {{ colorIndex }}</div>
+
+<!-- CANVAS -->
+<canvas
+  id="draw"
+  width="{{ matrixSize * pixelSize }}"
+  height="{{ matrixSize * pixelSize }}"
+></canvas>

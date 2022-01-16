@@ -4,11 +4,28 @@
     color {{ i }}
   </button>
 </div>
-<div>colorIndex: {{ colorIndex }}</div>
+<div>
+  <button (click)="selectBase()">set base</button>
+  <button (click)="copyInstructions()">copy instructions</button>
+</div>
+<div>
+  <input
+    type="file"
+    class="file-input"
+    (change)="openFile($event)"
+    #fileUpload
+  />
+</div>
+<div>
+  colorIndex: {{ colorIndex }} | base: {{ getBase().x }},{{ getBase().y }} |
+  mode: {{ mode }}
+</div>
 
 <!-- CANVAS -->
 <canvas
-  id="draw"
+  #mycanvas
+  id="mycanvas"
   width="{{ matrixSize * pixelSize }}"
   height="{{ matrixSize * pixelSize }}"
+  style="border: 1px solid black"
 ></canvas>
